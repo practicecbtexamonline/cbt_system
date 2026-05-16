@@ -1,3 +1,10 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello"
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify, send_from_directory
 import sqlite3, os, random, string, csv, io
 from werkzeug.utils import secure_filename
@@ -457,3 +464,6 @@ if __name__ == '__main__':
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     init_db()
     app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run()
